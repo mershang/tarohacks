@@ -13,15 +13,15 @@ article_text = raw_input("input text here")
 article_text = re.sub(r'\[[0-9]*\]', ' ', article_text)
 article_text = re.sub(r'\s+', ' ', article_text)
 
-formatted_article_text = re.sub('[^a-zA-Z]', ' ', article_text )
-formatted_article_text = re.sub(r'\s+', ' ', formatted_article_text)
+frmtted_article_text = re.sub('[^a-zA-Z]', ' ', article_text )
+frmtted_article_text = re.sub(r'\s+', ' ', frmtted_article_text)
 
 sentence_list = nltk.sent_tokenize(article_text)
 
 stopwords = nltk.corpus.stopwords.words('english')
 
 word_frequencies = {}
-for word in nltk.word_tokenize(formatted_article_text):
+for word in nltk.word_tokenize(frmtted_article_text):
     if word not in stopwords:
         if word not in word_frequencies.keys():
             word_frequencies[word] = 1
